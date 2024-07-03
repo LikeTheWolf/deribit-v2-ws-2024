@@ -1,6 +1,6 @@
 {
   "name": "@likethewolf/deribit-v2-ws-2024",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "deribit v2 ws api wrapper forked to add custom code",
   "main": "index.js",
   "types": "index.d.ts",
