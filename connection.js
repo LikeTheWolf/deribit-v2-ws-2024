@@ -298,6 +298,38 @@ class Connection extends EventEmitter {
 
     return this.sendMessage(message);
   }
+
+  subscribeMultiple = (type, channels) => {
+    // Filter out channels that are already subscribed to
+    const newChannels = channels.filter(channel =>
+      !this.subscriptions.find(s => s.type == type && s.channel == channel)
+    );
+
+    // Add new subscriptions to the list
+    newChannels.forEach(channel => {
+      this.subscriptions.push({ type, channel });
+    });
+
+    // Check connection and authentication state
+    if (!this.connected) {
+      throw new Error('Not connected.');
+    } else if (type === 'private' && !this.authenticated) {
+      throw new Error('Not authenticated.');
+    }
+
+    // Construct the subscription message
+    const message = {
+      jsonrpc: '2.0',
+      method: `${type}/subscribe`,
+      params: {
+        channels: newChannels
+      },
+      id: this.nextId()
+    };
+
+    // Send the subscription message
+    return this.sendMessage(message);
+  }
 }
 
 

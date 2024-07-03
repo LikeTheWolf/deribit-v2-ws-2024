@@ -1,6 +1,6 @@
 # deribit-v2-ws
 
-Deribit V2 API WS RPC wrapper.
+Deribit V2 API WS RPC wrapper with added multiple subscription support, forked from [deribit-v2-ws](https://github.com/askmike/deribit-v2-ws) which was originally published by [github.com/askmike](https://github.com/askmike/).
 
 [Docs are here](https://docs.deribit.com/v2/?javascript#deribit-api-v2-0-0).
 
@@ -61,3 +61,10 @@ result:
       usDiff: 2658,
       testnet: false
     }
+
+Custom multiple subscription support was added with this fork which will now allow passing an array of subscription strings:
+
+    await db.subscribeMultiple(
+      'public',
+      ['book.BTC-PERPETUAL.none.10.100ms', 'trades.BTC-PERPETUAL.raw']
+    );

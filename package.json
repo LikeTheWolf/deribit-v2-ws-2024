@@ -1,14 +1,15 @@
 {
-  "name": "deribit-v2-ws",
-  "version": "1.0.11",
-  "description": "deribit v2 ws api wrapper",
+  "name": "@likethewolf/deribit-v2-ws-2024",
+  "version": "1.0.0",
+  "description": "deribit v2 ws api wrapper forked to add custom code",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/askmike/deribit-v2-ws.git"
+    "url": "git+https://github.com/LikeTheWolf/deribit-v2-ws-2024.git"
   },
   "keywords": [
     "deribit",
@@ -19,9 +20,9 @@
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/askmike/deribit-v2-ws/issues"
+    "url": "https://github.com/LikeTheWolf/deribit-v2-ws-2024/issues"
   },
-  "homepage": "https://github.com/askmike/deribit-v2-ws#readme",
+  "homepage": "https://github.com/LikeTheWolf/deribit-v2-ws-2024#readme",
   "dependencies": {
     "ws": "^7.4.6"
   }
